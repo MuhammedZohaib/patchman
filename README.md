@@ -55,9 +55,12 @@ claude plugin install patchman@patchman-marketplace
 git clone https://github.com/MuhammedZohaib/patchman.git
 mkdir -p ~/.codex/plugins
 cp -R patchman/plugins/patchman ~/.codex/plugins/patchman
+codex marketplace add ./patchman
 ```
 
-Open the Codex plugin picker and search for `Patchman`, or point it directly at `~/.codex/plugins/patchman`.
+Use `~/.codex/plugins/patchman` if you want to point Codex directly at the plugin path.
+
+Use `codex marketplace add ./patchman` if you want `Patchman` to appear in Codex marketplace or picker discovery.
 
 ---
 
