@@ -8,5 +8,16 @@ if (!fs.existsSync(file)) {
   process.exit(0);
 }
 
+const VALID_MODES = new Set([
+  "security-audit",
+  "auth-review",
+  "business-logic-review",
+  "api-review",
+  "query-review",
+  "pr-diff-review",
+  "quick-triage",
+]);
+
 const current = JSON.parse(fs.readFileSync(file, "utf8"));
-process.stdout.write(`PATCHMAN MODE PERSISTED ${current.mode}\n`);
+const mode = VALID_MODES.has(current.mode) ? current.mode : "security-audit";
+process.stdout.write(`PATCHMAN MODE PERSISTED ${mode}\n`);

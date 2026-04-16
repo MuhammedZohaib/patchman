@@ -32,12 +32,6 @@
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/review-mode-tracker.js\"",
             "timeout": 5,
             "statusMessage": "Classifying review mode..."
-          },
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/audit-mode-persist.js\"",
-            "timeout": 5,
-            "statusMessage": "Persisting review mode..."
           }
         ]
       }

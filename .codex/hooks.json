@@ -6,13 +6,13 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node hooks/session-prime.js",
+            "command": "bash -c 'node \"$(git rev-parse --show-toplevel)/hooks/session-prime.js\"'",
             "timeout": 5,
             "statusMessage": "Patchman: loading defensive review posture"
           },
           {
             "type": "command",
-            "command": "node hooks/framework-detector.js",
+            "command": "bash -c 'node \"$(git rev-parse --show-toplevel)/hooks/framework-detector.js\"'",
             "timeout": 5,
             "statusMessage": "Patchman: detecting framework signals"
           }
@@ -25,15 +25,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node hooks/review-mode-tracker.js",
+            "command": "bash -c 'node \"$(git rev-parse --show-toplevel)/hooks/review-mode-tracker.js\"'",
             "timeout": 5,
             "statusMessage": "Patchman: classifying review mode"
-          },
-          {
-            "type": "command",
-            "command": "node hooks/audit-mode-persist.js",
-            "timeout": 5,
-            "statusMessage": "Patchman: storing mode context"
           }
         ]
       }

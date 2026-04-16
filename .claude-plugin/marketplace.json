@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "patchman",
-      "source": "./",
+      "source": "patchman",
       "description": "Authorized defensive security audit plugin for codebases and web applications.",
       "version": "0.1.0",
       "author": {

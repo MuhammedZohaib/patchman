@@ -4,7 +4,7 @@ description: Defensive security audit skill bundle for authorized code and web a
 repository: https://github.com/MuhammedZohaib/patchman
 owner:
   name: MuhammedZohaib
-  email: alizuhaib828@gmail.com
+  email: zohaib@traceroster.com
 entrypoints:
   root_skills: ./skills/
   codex_plugin: ./plugins/patchman/.codex-plugin/plugin.json

@@ -30,7 +30,7 @@ if (fs.existsSync(path.join(cwd, "manage.py"))) frameworks.push("django");
 
 const summary = {
   languages: [...new Set(detected)],
-  frameworks,
+  frameworks: [...new Set(frameworks)],
 };
 
 process.stdout.write(`PATCHMAN FRAMEWORK SIGNALS ${JSON.stringify(summary)}\n`);
