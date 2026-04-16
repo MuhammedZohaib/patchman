@@ -1,0 +1,10 @@
+id: weak-jwt-validation
+mode: auth-review
+summary: JWT middleware verifies signature but ignores issuer and audience.
+input: |
+  const payload = jwt.verify(token, process.env.JWT_SECRET)
+  req.user = payload
+expected_findings:
+  - title: Incomplete JWT claim validation
+    severity: Medium
+    confidence: High

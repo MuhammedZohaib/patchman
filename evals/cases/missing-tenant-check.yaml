@@ -1,0 +1,9 @@
+id: tenant-scope-missing
+mode: query-review
+summary: Tenant-scoped resource fetch omits organization filter.
+input: |
+  const project = await prisma.project.findUnique({ where: { id: params.projectId } })
+expected_findings:
+  - title: Project lookup missing tenant isolation filter
+    severity: High
+    confidence: High

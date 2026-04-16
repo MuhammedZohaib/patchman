@@ -1,0 +1,22 @@
+name: patchman
+version: 0.1.0
+description: Defensive security audit skill bundle for authorized code and web application review.
+repository: https://github.com/MuhammedZohaib/patchman
+owner:
+  name: MuhammedZohaib
+  email: alizuhaib828@gmail.com
+entrypoints:
+  root_skills: ./skills/
+  codex_plugin: ./plugins/patchman/.codex-plugin/plugin.json
+  claude_plugin: ./.claude-plugin/plugin.json
+modes:
+  - full security audit
+  - auth-only review
+  - business-logic review
+  - API review
+  - ORM / N+1 / data-access review
+  - PR diff review
+  - quick triage
+safety:
+  authorized_use_only: true
+  offensive_operations: refused

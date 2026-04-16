@@ -1,0 +1,9 @@
+id: avatar-fetch-ssrf
+mode: api-review
+summary: Backend fetches arbitrary user-supplied URL for avatar import.
+input: |
+  const response = await fetch(req.body.avatarUrl)
+expected_findings:
+  - title: Server-side fetch of untrusted URL without allowlist
+    severity: High
+    confidence: High

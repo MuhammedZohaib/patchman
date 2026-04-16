@@ -1,0 +1,20 @@
+{
+  "name": "patchman-repo",
+  "interface": {
+    "displayName": "Patchman Repo"
+  },
+  "plugins": [
+    {
+      "name": "patchman",
+      "source": {
+        "source": "local",
+        "path": "./plugins/patchman"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Security"
+    }
+  ]
+}

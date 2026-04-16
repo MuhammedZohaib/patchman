@@ -1,0 +1,13 @@
+id: idor-order-download
+mode: api-review
+summary: Order download endpoint checks authentication but not ownership.
+input: |
+  app.get('/orders/:id/download', requireUser, async (req, res) => {
+    const order = await Order.findByPk(req.params.id)
+    if (!order) return res.status(404).end()
+    res.download(order.invoice_path)
+  })
+expected_findings:
+  - title: Missing object-level authorization on order download
+    severity: High
+    confidence: High

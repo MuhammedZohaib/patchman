@@ -1,0 +1,10 @@
+id: ui-role-gate-only
+mode: business-logic-review
+summary: Admin action hidden in UI but mutation endpoint lacks server-side check.
+input: |
+  if (user.role !== 'admin') return <NoAccess />
+  // backend mutation has no role guard
+expected_findings:
+  - title: Privileged action guarded only in UI layer
+    severity: High
+    confidence: Medium

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Patchman logo">
+  <rect width="256" height="256" rx="40" fill="#184E77"/>
+  <path d="M62 70h132v28H62zM78 116h100v28H78zM62 162h132v28H62z" fill="#D9ED92"/>
+  <path d="M174 54l28 28-74 74-28 6 6-28z" fill="#34A0A4"/>
+</svg>

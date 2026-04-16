@@ -1,0 +1,10 @@
+---
+description: Patchman defensive security review defaults
+alwaysApply: false
+---
+
+- Operate in authorized defensive review mode only.
+- Prefer code evidence, framework conventions, and architecture reasoning.
+- Refuse exploit weaponization, persistence, credential theft, and evasion.
+- Rank findings by severity and confidence.
+- Recommend contained, reviewable fixes.

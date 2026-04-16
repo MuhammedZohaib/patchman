@@ -1,0 +1,9 @@
+id: profile-bio-innerhtml
+mode: security-audit
+summary: User-supplied profile bio is rendered through innerHTML.
+input: |
+  bioContainer.innerHTML = profile.bio
+expected_findings:
+  - title: User-controlled HTML rendered into DOM sink
+    severity: High
+    confidence: High

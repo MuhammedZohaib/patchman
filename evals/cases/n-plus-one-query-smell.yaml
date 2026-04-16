@@ -1,0 +1,12 @@
+id: admin-user-loop
+mode: query-review
+summary: Admin page loads users and then fetches organization per row.
+input: |
+  const users = await User.findAll()
+  for (const user of users) {
+    user.org = await Organization.findByPk(user.orgId)
+  }
+expected_findings:
+  - title: N+1 query pattern in administrative listing
+    severity: Medium
+    confidence: High

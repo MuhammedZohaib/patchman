@@ -1,0 +1,32 @@
+{
+  "name": "patchman",
+  "version": "0.1.0",
+  "description": "Authorized defensive security audit plugin for codebases, APIs, and web applications.",
+  "author": {
+    "name": "MuhammedZohaib",
+    "url": "https://github.com/MuhammedZohaib"
+  },
+  "homepage": "https://github.com/MuhammedZohaib/patchman",
+  "repository": "https://github.com/MuhammedZohaib/patchman",
+  "license": "MIT",
+  "keywords": ["security", "appsec", "owasp", "audit", "code-review"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Patchman",
+    "shortDescription": "Defensive security review for authorized code and web app audits.",
+    "longDescription": "Patchman reviews codebases, APIs, and architecture for security flaws, ranks findings by severity and confidence, and suggests safe remediations without offensive playbooks.",
+    "developerName": "MuhammedZohaib",
+    "category": "Security",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/MuhammedZohaib/patchman",
+    "privacyPolicyURL": "https://github.com/MuhammedZohaib/patchman/blob/main/README.md",
+    "termsOfServiceURL": "https://github.com/MuhammedZohaib/patchman/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Use Patchman in authorized defensive review mode. Prioritize evidence, severity, confidence, and safe remediation guidance."
+    ],
+    "composerIcon": "./assets/patchman-small.svg",
+    "logo": "./assets/patchman.svg",
+    "screenshots": [],
+    "brandColor": "#184E77"
+  }
+}

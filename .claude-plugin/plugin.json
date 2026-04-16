@@ -1,0 +1,46 @@
+{
+  "name": "patchman",
+  "description": "Defensive security audit mode for authorized code review and architecture assessment.",
+  "author": {
+    "name": "MuhammedZohaib",
+    "url": "https://github.com/MuhammedZohaib"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/session-prime.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading Patchman review posture..."
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/framework-detector.js\"",
+            "timeout": 5,
+            "statusMessage": "Detecting framework context..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/review-mode-tracker.js\"",
+            "timeout": 5,
+            "statusMessage": "Classifying review mode..."
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/audit-mode-persist.js\"",
+            "timeout": 5,
+            "statusMessage": "Persisting review mode..."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/session-prime.js",
+            "timeout": 5,
+            "statusMessage": "Patchman: loading defensive review posture"
+          },
+          {
+            "type": "command",
+            "command": "node hooks/framework-detector.js",
+            "timeout": 5,
+            "statusMessage": "Patchman: detecting framework signals"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/review-mode-tracker.js",
+            "timeout": 5,
+            "statusMessage": "Patchman: classifying review mode"
+          },
+          {
+            "type": "command",
+            "command": "node hooks/audit-mode-persist.js",
+            "timeout": 5,
+            "statusMessage": "Patchman: storing mode context"
+          }
+        ]
+      }
+    ]
+  }
+}

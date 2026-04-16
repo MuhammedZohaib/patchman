@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON manifests
+        run: |
+          python3 -m json.tool .agents/plugins/marketplace.json > /dev/null
+          python3 -m json.tool .claude-plugin/marketplace.json > /dev/null
+          python3 -m json.tool .claude-plugin/plugin.json > /dev/null
+          python3 -m json.tool plugins/patchman/.codex-plugin/plugin.json > /dev/null
+          python3 -m json.tool .codex/hooks.json > /dev/null
+      - name: Run repository shape test
+        run: bash tests/test_repository_shape.sh
+      - name: Run manifest smoke test
+        run: bash tests/manifest_smoke_test.sh

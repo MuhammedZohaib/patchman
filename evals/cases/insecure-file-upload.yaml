@@ -1,0 +1,10 @@
+id: avatar-upload-contenttype-only
+mode: security-audit
+summary: Upload handler trusts content type and original filename.
+input: |
+  if (!file.mimetype.startsWith('image/')) throw new Error('bad file')
+  await fs.rename(file.path, `/uploads/${file.originalname}`)
+expected_findings:
+  - title: File upload validation relies on client-controlled metadata
+    severity: High
+    confidence: High
