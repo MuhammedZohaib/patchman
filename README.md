@@ -47,6 +47,37 @@ Defensive security audit skills for agentic code review and web application asse
 
 ## Install
 
+### Claude Code (recommended)
+
+Two commands — no cloning required:
+
+```bash
+claude plugin marketplace add github:MuhammedZohaib/patchman
+claude plugin install patchman@patchman-marketplace
+```
+
+Restart Claude Code. The session hooks activate automatically and print `PATCHMAN ACTIVE` on start.
+
+To verify the install:
+
+```bash
+claude plugin list
+```
+
+To remove:
+
+```bash
+claude plugin uninstall patchman@patchman-marketplace
+```
+
+### Claude Code — local install from clone
+
+```bash
+git clone https://github.com/MuhammedZohaib/patchman.git
+claude plugin marketplace add ./patchman
+claude plugin install patchman@patchman-marketplace
+```
+
 ### Codex local install
 
 ```bash
@@ -56,15 +87,6 @@ cp -R patchman/plugins/patchman ~/.codex/plugins/patchman
 ```
 
 Then search for `Patchman` in the plugin picker or point Codex at `~/.codex/plugins/patchman`.
-
-### Claude Code local install
-
-```bash
-git clone https://github.com/MuhammedZohaib/patchman.git
-claude --plugin-dir ./patchman
-```
-
-The root `.claude-plugin/plugin.json` wires the safe review hooks automatically.
 
 ### Repo metadata for marketplace-style installs
 
@@ -101,12 +123,6 @@ Audit this pull request as a defensive security reviewer. Flag regressions, rank
 ```text
 Check the ORM layer for N+1 issues that become security problems under multi-tenant load or leak cross-tenant metadata.
 ```
-
-## Screenshots / Placeholders
-
-- `docs/screenshots/overview.png` — [placeholder: add CLI screenshot before first release]
-- `docs/screenshots/findings-report.png` — [placeholder: add structured report screenshot]
-- `docs/screenshots/mode-selection.png` — [placeholder: add review mode screenshot]
 
 ## Safety Posture
 
