@@ -21,7 +21,7 @@ Patchman is a skill and plugin bundle for **authorized security reviews**. It op
 ### Claude Code (Recommended)
 
 ```bash
-claude plugin marketplace add github:MuhammedZohaib/patchman
+claude plugin marketplace add https://github.com/MuhammedZohaib/patchman.git
 claude plugin install patchman@patchman-marketplace
 ```
 
